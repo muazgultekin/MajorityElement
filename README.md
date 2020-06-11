@@ -9,20 +9,20 @@ You may assume that the array is non-empty and the majority element always exist
 <a href="https://ibb.co/pjGHfY3"><img src="https://i.ibb.co/PG32cq5/Majority-Element.jpg" alt="Majority-Element" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'></a><br />
 </br>
 ```csharp
-public static int MajorityElement(int[] nums){
+ public static int MajorityElement(int[] nums) {
             IEnumerable sayis = nums.ToList().Distinct();
-            Dictionary<int,int> indieVeDegeri = new Dictionary<int, int>();
+            Dictionary<int,int> indisandValues = new Dictionary<int, int>();
             foreach (var item in sayis){
                 int k = 0;
                 for (int j = 0; j < nums.Length; j++){
                     if(Convert.ToInt32(item) == nums[j])
                         k++;
                 }
-                indieVeDegeri.Add(Convert.ToInt32(item),k);
+                indisandValues.Add(Convert.ToInt32(item),k);
             }
             int max = 0;
             int majorityNumber = 0;
-            foreach (var item in indieVeDegeri){
+            foreach (var item in indisandValues){
                 if (max < item.Value){
                     max = item.Value;
                     majorityNumber = item.Key;
